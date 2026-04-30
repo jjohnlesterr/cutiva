@@ -68,15 +68,6 @@ export function HeroSection() {
           <div className="flex justify-center md:justify-start">
             <div className="w-full max-w-2xl text-center md:text-left">
               <div className="space-y-5 sm:space-y-6">
-                <motion.p
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  custom={0}
-                  className="inline-flex items-center rounded-full border border-[#f3c7ff]/25 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f6d4ff] backdrop-blur-md sm:text-[11px] md:px-5 md:text-xs md:tracking-[0.32em]"
-                >
-                  Cutiva Premium Access
-                </motion.p>
 
                 <motion.h1
                   variants={fadeUp}

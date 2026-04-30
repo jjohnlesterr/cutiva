@@ -31,10 +31,6 @@ export function WhyChooseSection() {
           
           {/* Left content */}
           <div className="space-y-5 text-center md:text-left">
-            <span className="inline-flex rounded-full border border-pink-200 bg-pink-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-pink-600">
-              Premium Experience
-            </span>
-
             <div className="space-y-4">
               <h2 className="text-3xl font-bold leading-tight text-neutral-950 md:text-5xl">
                 Why Choose Cutiva

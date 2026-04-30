@@ -35,10 +35,6 @@ export function HowToOrderSection() {
 
           {/* HEADER */}
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="inline-flex rounded-full border border-pink-200 bg-pink-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-pink-600">
-              Simple Process
-            </span>
-
             <h2 className="text-3xl md:text-5xl font-bold text-neutral-950">
               How to Order
             </h2>

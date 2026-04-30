@@ -17,8 +17,10 @@ export function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [headerTheme, setHeaderTheme] = useState<HeaderTheme>('dark');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerTheme, setHeaderTheme] =
+    useState<HeaderTheme>('dark');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    useState(false);
 
   const lastScrollY = useRef(0);
 
@@ -28,7 +30,8 @@ export function Header() {
     if (element) {
       const headerOffset = 110;
       const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
+        element.getBoundingClientRect().top +
+        window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
 
       window.scrollTo({
@@ -72,9 +75,12 @@ export function Header() {
 
       const probeX = window.innerWidth / 2;
       const probeY = 110;
-      const elementUnderHeader = document.elementFromPoint(probeX, probeY);
-      const themedSection = elementUnderHeader?.closest('[data-header-theme]');
-      const theme = themedSection?.getAttribute('data-header-theme');
+      const elementUnderHeader =
+        document.elementFromPoint(probeX, probeY);
+      const themedSection =
+        elementUnderHeader?.closest('[data-header-theme]');
+      const theme =
+        themedSection?.getAttribute('data-header-theme');
 
       setHeaderTheme(theme === 'light' ? 'light' : 'dark');
 
@@ -83,12 +89,20 @@ export function Header() {
 
     updateHeaderState();
 
-    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('scroll', updateHeaderState, {
+      passive: true,
+    });
     window.addEventListener('resize', updateHeaderState);
 
     return () => {
-      window.removeEventListener('scroll', updateHeaderState);
-      window.removeEventListener('resize', updateHeaderState);
+      window.removeEventListener(
+        'scroll',
+        updateHeaderState
+      );
+      window.removeEventListener(
+        'resize',
+        updateHeaderState
+      );
     };
   }, []);
 
@@ -100,7 +114,8 @@ export function Header() {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () =>
+      window.removeEventListener('resize', handleResize);
   }, []);
 
   const styles = useMemo(() => {
@@ -145,10 +160,6 @@ export function Header() {
         ? 'border-black/10 bg-black/[0.04] text-black hover:bg-black/[0.08]'
         : 'border-white/10 bg-white/5 text-white hover:bg-white/10',
 
-      mobileMenu: isLight
-        ? 'border border-black/8 bg-white/88 shadow-[0_16px_40px_rgba(15,23,42,0.12)] backdrop-blur-2xl'
-        : 'border border-white/10 bg-[#160617]/92 shadow-[0_16px_40px_rgba(10,0,20,0.36)] backdrop-blur-2xl',
-
       mobileItem: isLight
         ? 'text-black/72 hover:bg-black/[0.05] hover:text-black'
         : 'text-white/84 hover:bg-white/10 hover:text-white',
@@ -156,131 +167,143 @@ export function Header() {
   }, [headerTheme]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-4 z-50 transition-all duration-500 ${
-        showHeader
-          ? 'translate-y-0 opacity-100'
-          : '-translate-y-full opacity-0'
-      }`}
-    >
-      <div className="mx-auto w-[calc(100%-1rem)] max-w-6xl px-2 md:px-4">
-        <div
-          className={`
-            relative flex h-[74px] items-center justify-between overflow-hidden
-            rounded-full px-4 md:px-6
-            transition-all duration-500
-            ${styles.shell}
-            ${isScrolled ? 'scale-[0.985]' : 'scale-100'}
-          `}
-        >
+    <>
+      {/* HEADER */}
+      <header
+        className={`fixed inset-x-0 top-4 z-[60] transition-all duration-500 ${
+          showHeader
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0'
+        }`}
+      >
+        <div className="mx-auto w-[calc(100%-1rem)] max-w-6xl px-2 md:px-4">
           <div
-            className={`pointer-events-none absolute inset-0 rounded-full ${styles.glow}`}
-          />
-          <div
-            className={`pointer-events-none absolute inset-0 rounded-full ${styles.stroke}`}
-          />
-          <div className="pointer-events-none absolute left-1/2 top-0 h-full w-[32%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl" />
-
-          <Link
-            href="/"
-            className="relative z-10 flex items-center transition-transform duration-300 hover:scale-[1.02]"
-            onClick={() => setIsMobileMenuOpen(false)}
+            className={`
+              relative flex h-[74px] items-center justify-between overflow-hidden
+              rounded-full px-4 md:px-6
+              transition-all duration-500
+              ${styles.shell}
+              ${isScrolled ? 'scale-[0.985]' : 'scale-100'}
+            `}
           >
-            <Image
-              src="/logo1.png"
-              alt="Cutiva logo"
-              width={150}
-              height={48}
-              className="h-auto w-[105px] object-contain md:w-[140px]"
-              priority
+            <div
+              className={`pointer-events-none absolute inset-0 rounded-full ${styles.glow}`}
             />
-          </Link>
+            <div
+              className={`pointer-events-none absolute inset-0 rounded-full ${styles.stroke}`}
+            />
 
-          <nav
-            className={`relative z-10 hidden items-center gap-2 rounded-full px-2 py-1.5 md:flex ${styles.navWrap}`}
-          >
+            <Link
+              href="/"
+              className="relative z-10 flex items-center"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Image
+                src="/logo1.png"
+                alt="Cutiva logo"
+                width={150}
+                height={48}
+                className="h-auto w-[105px] md:w-[140px]"
+                priority
+              />
+            </Link>
+
+            {/* DESKTOP NAV */}
+            <nav
+              className={`hidden md:flex items-center gap-2 rounded-full px-2 py-1.5 ${styles.navWrap}`}
+            >
+              {navItems.map((item) => {
+                const isActive =
+                  activeSection === item.id;
+
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() =>
+                      scrollToSection(item.id)
+                    }
+                    className={`
+                      rounded-full px-4 py-2.5 text-sm font-semibold
+                      transition-all duration-300
+                      ${
+                        isActive
+                          ? styles.navActive
+                          : styles.navBase
+                      }
+                    `}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </nav>
+
+            {/* BURGER */}
+            <button
+              aria-label="Menu"
+              onClick={() =>
+                setIsMobileMenuOpen((prev) => !prev)
+              }
+              className={`relative z-10 md:hidden rounded-full border p-2.5 ${styles.menuBtn}`}
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.2}
+                    d="M6 6l12 12M6 18L18 6"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* FULLSCREEN MOBILE MENU */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 flex flex-col bg-[#160617]/95 backdrop-blur-2xl md:hidden">
+          <div className="mt-[110px] flex flex-1 flex-col items-center justify-center gap-6 px-6">
             {navItems.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive =
+                activeSection === item.id;
 
               return (
                 <button
                   key={item.id}
-                  type="button"
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() =>
+                    scrollToSection(item.id)
+                  }
                   className={`
-                    rounded-full px-4 py-2.5 text-sm font-semibold tracking-[0.01em]
+                    w-full max-w-sm rounded-3xl px-6 py-5 text-xl font-semibold
                     transition-all duration-300
-                    ${isActive ? styles.navActive : styles.navBase}
+                    ${
+                      isActive
+                        ? styles.navActive
+                        : styles.mobileItem
+                    }
                   `}
                 >
                   {item.label}
                 </button>
               );
             })}
-          </nav>
-
-          <button
-            type="button"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className={`
-              relative z-10 flex items-center justify-center rounded-full
-              border p-2.5 transition-all duration-300 md:hidden
-              ${styles.menuBtn}
-            `}
-          >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.2}
-                  d="M6 6l12 12M6 18L18 6"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="mt-3 md:hidden">
-            <div className={`rounded-[1.5rem] p-3 ${styles.mobileMenu}`}>
-              <div className="flex flex-col gap-2">
-                {navItems.map((item) => {
-                  const isActive = activeSection === item.id;
-
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => scrollToSection(item.id)}
-                      className={`
-                        rounded-2xl px-4 py-3 text-left text-sm font-medium transition-all duration-300
-                        ${isActive ? styles.navActive : styles.mobileItem}
-                      `}
-                    >
-                      {item.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      )}
+    </>
   );
 }
