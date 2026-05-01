@@ -33,7 +33,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:min-h-screen md:pt-46 md:pb-20"
+      className="relative overflow-hidden pt-28 pb-12 sm:pt-28 sm:pb-16 md:min-h-screen md:pt-46 md:pb-20"
     >
       {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0">
@@ -63,18 +63,17 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="grid grid-cols-1 items-center gap-7 md:grid-cols-2 md:gap-16">
           {/* LEFT CONTENT */}
           <div className="flex justify-center md:justify-start">
             <div className="w-full max-w-2xl text-center md:text-left">
               <div className="space-y-5 sm:space-y-6">
-
                 <motion.h1
                   variants={fadeUp}
                   initial="hidden"
                   animate="visible"
                   custom={0.1}
-                  className="text-[3rem] font-black leading-[0.92] tracking-[-0.05em] text-white drop-shadow-[0_6px_25px_rgba(0,0,0,0.5)] sm:text-6xl md:text-7xl lg:text-[88px]"
+                  className="text-[4.0rem] font-black leading-[0.92] tracking-[-0.05em] text-white drop-shadow-[0_6px_25px_rgba(0,0,0,0.5)] sm:text-6xl md:text-7xl lg:text-[88px]"
                 >
                   Premium
                   <span className="block">Accounts</span>
@@ -88,7 +87,7 @@ export function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   custom={0.2}
-                  className="mx-auto max-w-md text-base font-semibold tracking-tight text-[#f3d2ff] drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] sm:text-xl md:mx-0 md:max-w-none md:text-2xl lg:text-3xl"
+                  className="mx-auto max-w-md text-2xl font-semibold tracking-tight text-[#f3d2ff] drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] sm:text-xl md:mx-0 md:max-w-none md:text-2xl lg:text-3xl"
                 >
                   Access more. Spend less.
                 </motion.p>
@@ -102,7 +101,7 @@ export function HeroSection() {
                 >
                   <a
                     href="#products"
-                    className="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-gradient-to-r from-[#f9a8d4]/95 via-[#f472b6]/95 to-[#ec4899]/95 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(236,72,153,0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_45px_rgba(236,72,153,0.5)] focus:outline-none focus:ring-2 focus:ring-pink-200/70 sm:px-8 sm:text-base"
+                    className="group inline-flex w-full max-w-[320px] items-center justify-center gap-2 rounded-full border border-white/30 bg-gradient-to-r from-[#f9a8d4]/95 via-[#f472b6]/95 to-[#ec4899]/95 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(236,72,153,0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_45px_rgba(236,72,153,0.5)] focus:outline-none focus:ring-2 focus:ring-pink-200/70 sm:w-auto sm:px-8 sm:text-base"
                   >
                     <span>View Products</span>
                     <svg
@@ -156,7 +155,7 @@ export function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   custom={0.55}
-                  className="mb-4 text-center text-[1.9rem] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.4)] sm:text-4xl md:text-left md:text-3xl"
+                  className="mb-4 text-center text-[1.9rem] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.4)] sm:text-xl md:text-left md:text-3xl"
                 >
                   Premium access, without the premium price.
                 </motion.h2>

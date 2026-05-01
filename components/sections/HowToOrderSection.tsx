@@ -28,101 +28,94 @@ export function HowToOrderSection() {
   return (
     <section
       id="how-to-order"
-      className="border-b border-pink-100 bg-gradient-to-b from-[#fff8fc] to-white py-14 md:py-14"
+      className="border-b border-pink-100 bg-[#fffdfd] py-10 md:py-14"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <div className="space-y-16">
+        <div className="space-y-10 md:space-y-16">
 
-          {/* HEADER */}
-          <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-neutral-950">
+          <div className="mx-auto max-w-xl space-y-3 text-center">
+            <h2 className="text-3xl font-bold text-neutral-950 md:text-5xl">
               How to Order
             </h2>
 
-            <p className="text-neutral-600">
+            <p className="text-sm text-neutral-600 md:text-base">
               Getting your premium account is quick and easy — just follow these steps.
             </p>
           </div>
 
-          {/* STEPS */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="group relative rounded-[1.5rem] border border-pink-100 bg-white p-6 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(236,72,153,0.12)]"
+                className="group relative rounded-2xl border border-pink-100 bg-white p-3 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(236,72,153,0.12)] md:rounded-[1.5rem] md:p-6"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-rose-400 text-white font-bold">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-rose-400 text-xs font-bold text-white md:mb-4 md:h-12 md:w-12 md:text-base">
                   {step.number}
                 </div>
 
-                <h3 className="font-semibold text-neutral-900 mb-2">
+                <h3 className="text-sm font-semibold text-neutral-900 md:text-base">
                   {step.title}
                 </h3>
 
-                <p className="text-sm text-neutral-600">
+                <p className="mt-1 text-xs text-neutral-600 md:mt-2 md:text-sm">
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-
-            {/* FACEBOOK */}
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-3 md:grid-cols-2 md:gap-6">
             <a
               href="https://www.facebook.com/profile.php?id=61585690502630"
               target="_blank"
               rel="noopener noreferrer"
-              className="group cursor-pointer flex items-center justify-between rounded-[1.5rem] border border-pink-100 bg-white px-6 py-5 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(236,72,153,0.12)]"
+              className="group flex items-center justify-between rounded-2xl border border-pink-100 bg-white px-4 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(236,72,153,0.12)] md:rounded-[1.5rem] md:px-6 md:py-5"
             >
-              <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-lg shadow-md transition group-hover:scale-110">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-sm text-white shadow-md transition group-hover:scale-110 md:h-11 md:w-11 md:text-lg">
                   <FaFacebook />
                 </div>
 
                 <div>
-                  <p className="font-semibold text-neutral-900">
+                  <p className="text-sm font-semibold text-neutral-900 md:text-base">
                     Facebook
                   </p>
-                  <p className="text-sm text-neutral-500">
+                  <p className="text-xs text-neutral-500 md:text-sm">
                     Message us directly
                   </p>
                 </div>
               </div>
 
-              <span className="text-sm text-pink-600 font-medium group-hover:translate-x-1 transition">
+              <span className="text-xs font-medium text-pink-600 transition group-hover:translate-x-1 md:text-sm">
                 Open →
               </span>
             </a>
 
-            {/* TELEGRAM */}
             <a
               href="https://t.me/cutivaprems"
               target="_blank"
               rel="noopener noreferrer"
-              className="group cursor-pointer flex items-center justify-between rounded-[1.5rem] border border-pink-100 bg-white px-6 py-5 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(236,72,153,0.12)]"
+              className="group flex items-center justify-between rounded-2xl border border-pink-100 bg-white px-4 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(236,72,153,0.12)] md:rounded-[1.5rem] md:px-6 md:py-5"
             >
-              <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-blue-500 text-white text-lg shadow-md transition group-hover:scale-110">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-blue-500 text-sm text-white shadow-md transition group-hover:scale-110 md:h-11 md:w-11 md:text-lg">
                   <FaTelegramPlane />
                 </div>
 
                 <div>
-                  <p className="font-semibold text-neutral-900">
+                  <p className="text-sm font-semibold text-neutral-900 md:text-base">
                     Telegram
                   </p>
-                  <p className="text-sm text-neutral-500">
+                  <p className="text-xs text-neutral-500 md:text-sm">
                     Chat with us instantly
                   </p>
                 </div>
               </div>
 
-              <span className="text-sm text-pink-600 font-medium group-hover:translate-x-1 transition">
+              <span className="text-xs font-medium text-pink-600 transition group-hover:translate-x-1 md:text-sm">
                 Open →
               </span>
             </a>
-
           </div>
         </div>
       </div>
