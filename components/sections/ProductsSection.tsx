@@ -26,29 +26,26 @@ export function ProductsSection() {
   return (
     <section
       id="products"
-      className="border-b border-pink-100 bg-gradient-to-b from-[#fff8fc] to-[#fffdfd] py-14 md:py-14"
+      className="border-b border-pink-100 bg-gradient-to-b from-[#fff8fc] to-[#fffdfd] py-10 md:py-14"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <div className="space-y-12">
-          
-          {/* HEADER */}
+      <div className="mx-auto w-full max-w-7xl px-3 md:px-8">
+        <div className="space-y-8 md:space-y-12">
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tight text-neutral-950 md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-neutral-950 md:text-5xl">
               Explore Our Collection
             </h2>
 
-            <p className="mx-auto mt-3 max-w-2xl text-base text-neutral-600 md:text-lg">
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-600 md:text-lg">
               Premium subscriptions across editing, AI, education, and video streaming categories.
             </p>
           </div>
 
-          {/* FILTER */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
+                className={`rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 md:px-5 md:py-2.5 md:text-sm ${
                   selectedCategory === category
                     ? 'bg-gradient-to-r from-pink-500 to-pink-400 text-white shadow'
                     : 'border border-pink-100 bg-white text-neutral-700 hover:text-pink-600'
@@ -59,17 +56,14 @@ export function ProductsSection() {
             ))}
           </div>
 
-          {/* GRID */}
-          <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid auto-rows-fr grid-cols-2 gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {visibleProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          {/* LOAD MORE / LESS */}
           {(hasMoreProducts || visibleCount > PRODUCTS_PER_PAGE) && (
             <div className="flex justify-center gap-3">
-              
               {visibleCount > PRODUCTS_PER_PAGE && (
                 <button
                   onClick={() => setVisibleCount(PRODUCTS_PER_PAGE)}
@@ -91,7 +85,6 @@ export function ProductsSection() {
                   Load More
                 </button>
               )}
-
             </div>
           )}
         </div>
