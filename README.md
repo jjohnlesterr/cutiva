@@ -1,53 +1,71 @@
 # Cutiva Website
 
-## Preview
+A modern and responsive marketing website built for a client offering premium digital products and subscription-based services.
 
-![Cutiva Preview](./public/preview.png)
+---
 
-## Live Demo
+## 🚀 Live Demo
 
 https://cutiva.vercel.app
 
 ---
 
-## Overview
+## 🖼 Preview
 
-A modern marketing website built for promoting premium digital products and subscription-based services. The site is designed to showcase available offers, highlight product categories, simplify ordering, and build customer trust through a clean and responsive user interface.
-
----
-
-## Features
-
-- Responsive landing page design
-- Hero section with clear call-to-action
-- Product collection/cards layout
-- Category-based product presentation
-- “How to Order” process section
-- Testimonials section
-- Clean footer and navigation
-- Modern UI with soft gradients and card-based layout
+![Cutiva Preview](./public/preview.png)
 
 ---
 
-## Tech Stack
+## 📖 Overview
+
+Cutiva is a client project designed to showcase premium digital subscriptions in a clean, organized, and conversion-focused layout.
+
+The website aims to:
+- Present products clearly
+- Simplify the ordering process
+- Build customer trust through social proof
+- Deliver a smooth experience across all devices
+
+---
+
+## ✨ Features
+
+- Fully responsive landing page (mobile, tablet, desktop)
+- Conversion-focused hero section with clear call-to-action
+- Product cards with expandable options
+- Category-based filtering system
+- "How to Order" step-by-step guide
+- Testimonials / customer feedback section
+- Social proof integration (Facebook, Telegram, etc.)
+- Clean navigation and structured footer
+- Modern UI with gradients, shadows, and card-based layout
+- Smooth hover interactions and micro-animations
+
+---
+
+## 🛠 Tech Stack
 
 - Next.js
-- TypeScript
 - React
+- TypeScript
 - Tailwind CSS
-- Node.js
 
 ---
 
-## Project Purpose
+## 🎯 Project Context
 
-This website was created as a marketing website for a client who sells digital premium products. Its goal is to present products in a more professional and organized way, making it easier for customers to browse offers and place orders.
+This website was developed for a real client (**Cutiva**) who sells digital premium accounts and subscription services.
+
+The goal was to transform a simple selling process into a more professional and user-friendly experience by:
+- Improving visual presentation
+- Organizing product information
+- Making ordering easier and more intuitive
 
 ---
 
-## Getting Started
+## ⚙️ Getting Started
 
-### 1. Setup and run the project
+### Setup and run the project
 
 ```bash
 git clone https://github.com/jjohnlesterr/cutiva.git
